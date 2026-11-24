@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Z.R.K.Sspace - center | By Zakii</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+  body{background:#0d0a1f;color:white;transition:.3s}
+  body.light{background:#f5f0ff;color:#111}
+  body.light .card,body.light .modal-box{background:#fff;color:#111;border-color:#f5c86e}
+  body.light .profil{background:linear-gradient(135deg,#ffe9a8,#ffc8e0);color:#111}
+  body.light .subscribe{background:#222;color:white}
+  .top{display:flex;justify-content:space-between;align-items:center;padding:18px 30px;flex-wrap:wrap;gap:10px}
+  .logo{font-size:22px;font-weight:bold;color:#f5c86e}
+  .menu a{color:inherit;text-decoration:none;margin:0 10px;font-size:14px}
+  .btn{background:#f5c86e;color:black;padding:10px 18px;border-radius:8px;font-weight:bold;border:none;cursor:pointer;text-decoration:none;display:inline-block}
+  .btn2{background:transparent;color:#f5c86e;padding:10px 18px;border-radius:8px;border:1px solid #f5c86e;text-decoration:none;font-weight:bold;display:inline-block;cursor:pointer}
+  .hero{background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.55)),url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1200');background-size:cover;background-position:center;padding:50px 30px;color:white}
+  .hero h1{font-size:38px;color:#f5c86e;line-height:1.2}
+  .hero p{margin:15px 0 20px;line-height:1.6;opacity:.9;max-width:500px}
+  .section{padding:35px 20px;max-width:1100px;margin:auto;text-align:center}
+  .small{color:#f5c86e;font-size:12px;letter-spacing:2px;font-weight:bold}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:25px;text-align:left}
+  .card{border:1px solid #f5c86e66;border-radius:15px;overflow:hidden;background:#171233}
+  .card img{width:100%;height:180px;object-fit:cover;display:block}
+  .card-body{padding:18px}
+  .card-body h3{color:#f5c86e;margin-bottom:8px}
+  .card-body p{font-size:13px;line-height:1.6;opacity:.85}
+  .read{color:#f5c86e;display:block;margin-top:10px;font-size:13px;font-weight:bold;cursor:pointer;background:none;border:none}
+  .tag{position:absolute;top:10px;left:10px;background:#f5c86e;color:black;padding:4px 10px;border-radius:6px;font-size:11px;font-weight:bold}
+  .wrap{position:relative}
+  .profil{background:linear-gradient(135deg,#1a2060,#3a0a6e);padding:22px;border-radius:18px;margin:10px 0 25px}
+  .subscribe{background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.6)),url('https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1000');background-size:cover;padding:35px 20px;text-align:center;color:white}
+  .subscribe input{padding:12px;width:280px;max-width:80%;border-radius:8px;border:1px solid #555;background:#111;color:white}
+  footer{padding:20px 30px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12px;opacity:.8}
+  .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);z-index:99;justify-content:center;align-items:center;padding:20px}
+  .modal-box{background:#171233;border:2px solid #f5c86e;padding:25px;border-radius:18px;max-width:550px;width:100%;max-height:85vh;overflow:auto}
+  .modal-box h2{color:#f5c86e;margin-bottom:12px}
+  .modal-box p{line-height:1.8;font-size:14px;opacity:.9;white-space:pre-line}
+  .close{float:right;background:#f5c86e;border:none;padding:6px 12px;border-radius:8px;font-weight:bold;cursor:pointer}
+  .kuis{background:linear-gradient(135deg,#1a2060,#3a0a6e);padding:30px 20px;border-radius:20px;margin:20px auto;max-width:700px;text-align:left}
+  .kuis h2{color:#ffd700;text-align:center}
+  .soal{margin-top:18px;background:rgba(255,255,255,.08);padding:15px;border-radius:12px}
+  .soal p{font-weight:bold;margin-bottom:10px}
+  .soal label{display:block;margin:6px 0;cursor:pointer;font-size:14px}
+  .hasil{margin-top:15px;text-align:center;font-weight:bold;font-size:16px;color:#7CFFB2}
+  .music-float{position:fixed;bottom:20px;right:20px;z-index:100;background:#f5c86e;color:black;padding:12px 16px;border-radius:50px;font-weight:bold;cursor:pointer;border:none;box-shadow:0 5px 20px rgba(0,0,0,.5);font-size:14px}
+  .music-box{position:fixed;bottom:75px;right:20px;z-index:100;background:#171233;border:2px solid #f5c86e;padding:18px;border-radius:16px;width:260px;display:none;color:white}
+  .music-box h3{color:#f5c86e;font-size:15px;margin-bottom:5px}
+  .music-box p{font-size:12px;opacity:.8}
+  .music-box input{width:100%;margin-top:10px}
+  @media(max-width:600px){.grid{grid-template-columns:1fr}.hero h1{font-size:28px}.top{justify-content:center;text-align:center}}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="logo">✨ Z.R.K.Sspace - center</div>
+  <div class="menu">
+    <a href="#">Home</a>
+    <a href="#gerhana">Gerhana</a>
+    <a href="#planet">Planet</a>
+    <a href="#kuis">Kuis</a>
+  </div>
+  <div>
+    <button class="btn2" onclick="toggleMode()" id="modeBtn">☀️ Light Mode</button>
+    <button class="btn" onclick="toggleMusicBox()">🎵 Music</button>
+    <a class="btn" href="https://www.tiktok.com/@zakssszedukasi" target="_blank">🎵 @zakssszedukasi</a>
+  </div>
+</div>
+
+<div class="hero">
+  <h1>DISCOVER<br>THE UNIVERSE</h1>
+  <p>Explore astronomy, from solar eclipses to black holes. Learn with Z.R.K.Sspace - center, by Zakii!</p>
+  <a class="btn" href="#gerhana">Explore Now →</a>
+  <button class="btn2" onclick="openModal('kalender')">📅 Stargazing Calendar</button>
+  <button class="btn2" onclick="playMusic()">▶️ Play Space Music</button>
+  <p style="margin-top:15px;font-size:13px;">👨‍🚀 Dibuat Oleh : ZAKII | TikTok : @zakssszedukasi</p>
+</div>
+
+<div class="section">
+  <div class="small">FEATURED TOPICS</div>
+  <h2>Explore Key Astronomy Topics</h2>
+  <div class="profil">
+    <h3 style="color:#ffd700;">Halo, Gue Zakii! 👋</h3>
+    <p style="margin-top:8px;line-height:1.6;font-size:14px;opacity:.9;">Selamat datang di Z.R.K.Sspace - center! Follow TikTok gue @zakssszedukasi ya!</p>
+  </div>
+
+  <div class="grid">
+    <div class="card" id="gerhana">
+      <div class="wrap"><span class="tag">EVENT</span><img src="https://images.unsplash.com/photo-1532693322450-2cb5c511067d?w=800" alt="Ilustrasi Gerhana Matahari"></div>
+      <div class="card-body"><h3>Solar Eclipse / Gerhana</h3><p>Gerhana Matahari & Bulan Blood Moon.</p><button class="read" onclick="openModal('gerhana')">Read more →</button></div>
+    </div>
+    <div class="card" id="planet">
+      <div class="wrap"><span class="tag">GUIDE</span><img src="https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=800" alt="Ilustrasi Planet Tata Surya"></div>
+      <div class="card-body"><h3>Planets</h3><p>8 Planet, dari Merkurius sampe Neptunus!</p><button class="read" onclick="openModal('planet')">Read more →</button></div>
+    </div>
+    <div class="card" id="bintang">
+      <div class="wrap"><span class="tag">SCIENCE</span><img src="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800" alt="Ilustrasi Bintang di Langit Malam"></div>
+      <div class="card-body"><h3>Stars</h3><p>Bintang paling terang itu Sirius!</p><button class="read" onclick="openModal('bintang')">Read more →</button></div>
+    </div>
+    <div class="card" id="blackhole">
+      <div class="wrap"><span class="tag">DEEP SPACE</span><img src="https://images.unsplash.com/photo-1465101162946-4377e57745c3?w=800" alt="Ilustrasi Black Hole"></div>
+      <div class="card-body"><h3>Black Holes</h3><p>Sagittarius A* di galaksi kita!</p><button class="read" onclick="openModal('blackhole')">Read more →</button></div>
+    </div>
+  </div>
+
+  <div class="kuis" id="kuis">
+    <h2>🧠 KUIS ASTRONOMI - By Zakii</h2>
+    <p style="text-align:center;opacity:.8;font-size:13px;margin-top:8px;">Uji otak lu! Jawab 5 soal, liat skor lu!</p>
+    <div class="soal"><p>1. Planet paling panas di Tata Surya?</p><label><input type="radio" name="q1" value="0"> Mars</label><label><input type="radio" name="q1" value="1"> Venus</label><label><input type="radio" name="q1" value="0"> Jupiter</label></div>
+    <div class="soal"><p>2. Gerhana Matahari terjadi saat?</p><label><input type="radio" name="q2" value="1"> Bulan di antara Matahari & Bumi</label><label><input type="radio" name="q2" value="0"> Bumi di antara Matahari & Bulan</label><label><input type="radio" name="q2" value="0"> Matahari meledak</label></div>
+    <div class="soal"><p>3. Bintang paling terang di langit malam?</p><label><input type="radio" name="q3" value="0"> Polaris</label><label><input type="radio" name="q3" value="1"> Sirius</label><label><input type="radio" name="q3" value="0"> Vega</label></div>
+    <div class="soal"><p>4. Black Hole di tengah galaksi kita namanya?</p><label><input type="radio" name="q4" value="0"> Andromeda</label><label><input type="radio" name="q4" value="0"> Gargantua</label><label><input type="radio" name="q4" value="1"> Sagittarius A*</label></div>
+    <div class="soal"><p>5. Planet terbesar di Tata Surya?</p><label><input type="radio" name="q5" value="1"> Jupiter</label><label><input type="radio" name="q5" value="0"> Saturnus</label><label><input type="radio" name="q5" value="0"> Neptunus</label></div>
+    <div style="text-align:center;margin-top:18px;"><button class="btn" onclick="cekKuis()">Cek Skor Gue! 🚀</button></div>
+    <p class="hasil" id="hasilKuis"></p>
+  </div>
+</div>
+
+<div class="subscribe">
+  <h2 style="color:#f5c86e;">Stay Updated with the Night Sky</h2>
+  <p style="margin:10px 0 18px;opacity:.9;font-size:14px;">Get weekly astronomy news!</p>
+  <input type="email" id="email" placeholder="Masukkan email kamu..."><br><br>
+  <button class="btn" onclick="subscribe()">Subscribe 🚀</button>
+  <p id="pesan" style="margin-top:12px;color:#7CFFB2;font-weight:bold;"></p><br>
+  <a class="btn2" href="https://www.tiktok.com/@zakssszedukasi" target="_blank">🎵 Follow @zakssszedukasi</a>
+</div>
+
+<footer>
+  <div>© 2026 Z.R.K.Sspace - center | Created by Zakii</div>
+  <div>🎵 TikTok : @zakssszedukasi</div>
+</footer>
+
+<audio id="spaceMusic" loop><source src="https://cdn.pixabay.com/audio/2022/10/25/audio_1e3b8b1e4e.mp3" type="audio/mpeg"></audio>
+<button class="music-float" onclick="toggleMusicBox()" id="floatBtn">🎵 Play Music</button>
+<div class="music-box" id="musicBox">
+  <h3>🎵 Z.R.K.Sspace Music</h3>
+  <p>Space Ambient - Relax & Explore</p>
+  <p id="musicStatus" style="color:#7CFFB2;margin-top:8px;">⏸️ Musik belum diputar</p>
+  <button class="btn" style="width:100%;margin-top:12px;" onclick="playMusic()" id="playBtn">▶️ Play</button>
+  <label style="font-size:12px;display:block;margin-top:12px;">🔊 Volume</label>
+  <input type="range" min="0" max="100" value="50" oninput="setVolume(this.value)">
+  <button class="btn2" style="width:100%;margin-top:10px;" onclick="toggleMusicBox()">Tutup</button>
+</div>
+
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <button class="close" onclick="closeModal()">X Tutup</button>
+    <h2 id="judul"></h2>
+    <p id="isi"></p>
+  </div>
+</div>
+
+<script>
+const data={
+gerhana:{judul:"🌑 Gerhana Matahari & Bulan",isi:"Gerhana Matahari terjadi kalau Bulan ada di antara Matahari dan Bumi. Ada 3 jenis: Total, Sebagian, dan Cincin.\nJANGAN LIAT PAKE MATA TELANJANG!\nGerhana Bulan: Bumi nutupin Matahari, Bulan jadi merah Blood Moon."},
+planet:{judul:"🪐 8 Planet Tata Surya",isi:"Merkurius paling deket Matahari.\nVenus paling panas 465°C.\nBumi satu-satunya ada kehidupan.\nMars planet merah.\nJupiter paling gede muat 1300 Bumi.\nSaturnus cincin paling cakep.\nUranus muter miring.\nNeptunus angin 2100 km/jam!"},
+bintang:{judul:"⭐ Bintang Itu Apa?",isi:"Bintang itu bola gas raksasa yang bersinar karena reaksi nuklir.\nMatahari kita juga bintang!\nBintang paling terang di langit malam adalah Sirius."},
+blackhole:{judul:"🕳️ Black Hole",isi:"Gravitasinya super kuat, cahaya pun gak bisa kabur.\nDi galaksi kita ada Sagittarius A*, massanya 4 juta kali Matahari.\nKalau jatuh ke sana lu bakal ketarik kayak spageti!"},
+kalender:{judul:"📅 Stargazing Calendar 2026",isi:"- 3 Maret 2026: Gerhana Bulan Total (Blood Moon) di Indonesia!\n- 12 Agustus 2026: Hujan Meteor Perseid jam 1-3 pagi.\n- 18 September 2026: Saturnus paling terang.\n- 14 Desember 2026: Hujan Meteor Geminid."}
+};
+function openModal(k){document.getElementById('modal').style.display='flex';document.getElementById('judul').innerText=data[k].judul;document.getElementById('isi').innerText=data[k].isi;}
+function closeModal(){document.getElementById('modal').style.display='none';}
+function subscribe(){let e=document.getElementById('email').value.trim();if(e==""){document.getElementById('pesan').innerText="Isi email dulu cok! 😅";}else if(!e.includes("@")||!e.includes(".")){document.getElementById('pesan').innerText="Emailnya harus ada @ dan . ya, contoh: zakii@gmail.com 😅";}else{document.getElementById('pesan').innerText="Makasih! "+e+" udah terdaftar! Zakii bakal kirim info langit malem! 🚀";document.getElementById('email').value="";}}
+function toggleMode(){let b=document.body;let btn=document.getElementById('modeBtn');b.classList.toggle('light');if(b.classList.contains('light')){btn.innerText="🌙 Dark Mode";}else{btn.innerText="☀️ Light Mode";}}
+function cekKuis(){let skor=0;for(let i=1;i<=5;i++){let pilih=document.querySelector('input[name="q'+i+'"]:checked');if(pilih && pilih.value=="1") skor++;}let pesan="";if(skor==5) pesan="GILA! 5/5! Lu MASTER OF UNIVERSE! 👑🔥";else if(skor>=3) pesan="Lumayan! Skor lu "+skor+"/5. Udah pinter! 🌟";else pesan="Skor lu "+skor+"/5. Belajar lagi di web Z.R.K.Sspace - center ya! 📚";document.getElementById('hasilKuis').innerText="Skor Lu: "+skor+"/5 - "+pesan;}
+let music=document.getElementById('spaceMusic');
+function updateMusicUI(playing){document.getElementById('playBtn').innerText=playing?"⏸️ Pause":"▶️ Play";document.getElementById('floatBtn').innerText=playing?"🎵 Pause Music":"🎵 Play Music";document.getElementById('musicStatus').innerText=playing?"🎵 Sedang diputar... Enjoy, Explorer!":"⏸️ Musik dijeda";}
+music.addEventListener('play',()=>updateMusicUI(true));
+music.addEventListener('pause',()=>updateMusicUI(false));
+function playMusic(){if(music.paused){music.play().catch(()=>{document.getElementById('musicStatus').innerText="Browser nge-block musiknya, klik lagi ya! 😅";});}else{music.pause();}}
+function toggleMusicBox(){let box=document.getElementById('musicBox');box.style.display=(box.style.display=="block")?"none":"block";}
+function setVolume(v){music.volume=v/100;}
+music.volume=0.5;
+document.getElementById('modal').addEventListener('click',function(e){if(e.target==this) closeModal();});
+</script>
+</body>
+</html>
